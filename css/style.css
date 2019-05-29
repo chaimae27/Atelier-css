@@ -1,0 +1,265 @@
+/*
+
+Vert: #7ed56f
+Vert medium: #55c57a
+Dark vert: #28b485
+
+*/
+
+/* Copyright @TIJANI ABDELLATIF 
+Front web developer 
+
+*/ 
+
+/* normaliser le css */
+
+*
+{
+	text-align: center;
+	font-family: 'lato', sans-serif;
+	font-weight: 400;
+    text-transform: uppercase;
+}
+
+body {
+     padding: 30px;
+     margin: 1px;
+}
+
+/* le corps de la page */
+.header 
+{
+   background-image: linear-gradient(to right bottom, rgba(204,255,255,0.4), rgba(126,213,111,0.2)), url("../img/hero.jpg");
+   background-size: cover;
+   height: 94vh;
+   clip-path: polygon(0 0, 100% 0%, 100% 88%, 0% 100%);
+
+}
+
+.logo
+{
+	  position: relative;
+   	right: 32em;
+   	top: 1em;
+   	animation: bounceInDown 4s;
+}
+
+.logowhite
+{
+   height: 50px;
+   width: 90px;
+
+}
+
+.main
+{
+   text-align: center;
+
+}
+.heading1{
+
+	display: flex;
+	flex-direction: column;
+    font-size: 40px;
+    color: aliceblue; 
+    padding-top:50px; 
+}
+.heading11
+{
+    position: relative;
+    font-size: 74px;
+    letter-spacing: 27px;
+    animation-name: flipInX;
+    animation-duration: 5s;
+    margin-bottom: 4px;
+}
+
+.heading12
+{
+    position: relative;
+    animation-name: flipInX;
+    animation-duration: 10s;
+    letter-spacing: 10px;
+    font-size: 28px;
+    font-weight: bolder;
+    margin-bottom:40px; 
+}
+
+/* Animation */ 
+
+@keyframes flipInX {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+
+@keyframes flipInY {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+  }
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+
+
+
+@keyframes bounceInDown {
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3000px, 0);
+    transform: translate3d(0, -3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 25px, 0);
+    transform: translate3d(0, 25px, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 5px, 0);
+  }
+}
+
+/* bouton */ 
+.btn:link,.btn:visited
+{
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .3s;
+    position: relative;
+    font-size: 15px;
+    color: #808080
+
+}
+
+.btn:hover{
+
+    transform: translateY(-7px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+}
+.btn:active
+{
+    transform: translate(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+   
+}
+
+.btn-white
+{
+   background-color: snow;
+   color: black;
+   padding: 20px 15px;
+   border-radius: 50px;
+   text-decoration: none;
+   border: 1px dashed yellow;
+
+}
+
+/* animer le boutton behind the scene  */ 
+
+.btn::after /* l'element fils apres le bouton */
+{
+  
+
+}
+
+.btn-white::after /* l'element fils apres le bouton */{
+  /* 
+    mettez l'element en rouge pour voir la difference
+   background-color:red;
+   */
+
+    content:'';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: #fff;
+    border-radius: 2rem;
+    transform: scale(0);
+    transition: all .5s;
+}
+
+.btn:hover::after
+{
+    transform: scale(1.5);
+    opacity: 0;
+
+
+}
+.btn-animated 
+{
+    animation: flipInY 5s;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+   
+}
+
+
+
+
+ 
+ 
